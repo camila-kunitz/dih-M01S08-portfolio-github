@@ -4,7 +4,9 @@ const Repositorio = ({ titulo, descricao, destacar }) => {
   return (
     <article>
       <h3>{titulo}</h3>
-      <span>projeto em destaque!!</span>
+      {
+        destacar ? (<span>projeto em destaque!!</span>) : null
+      }
       <p>{descricao}</p>
     </article>
   )
