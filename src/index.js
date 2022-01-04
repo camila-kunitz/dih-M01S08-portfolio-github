@@ -7,10 +7,8 @@ import Repositorio from './components/Repositorio';
 ReactDOM.render(
   <React.StrictMode>
     <App />
-    <Resumo />
+    <Resumo nome="Imagem Aleatória 1" imagem="https://picsum.photos/200/300" />
     <Repositorio />
-   </React.StrictMode>,
+  </React.StrictMode>,
   document.getElementById('root')
 );
-
-

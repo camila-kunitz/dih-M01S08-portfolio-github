@@ -1,10 +1,17 @@
-const Resumo = () => {
+import PropTypes from 'prop-types';
+
+const Resumo = ({ nome, imagem }) => {
   return (
     <div>
-      <img src="https://github.com/camila-kunitz.png" alt="imagem de perfil"></img>
-      <h2>Dev Camila</h2>
+      <img src={imagem} alt={nome}></img>
+      <h2>{nome}</h2>
     </div>
   );
 }
+
+Resumo.propTypes = {
+  nome: PropTypes.string.isRequired,
+  imagem: PropTypes.string.isRequired
+};
 
 export default Resumo;
