@@ -8,7 +8,7 @@ ReactDOM.render(
   <React.StrictMode>
     <App />
     <Resumo nome="Imagem Aleatória 1" imagem="https://picsum.photos/200/300" />
-    <Repositorio />
+    <Repositorio titulo="DIH - React" descricao="Este repositório possui todos exercícios e projetos do curso DevInHouse" destacar={true} />
   </React.StrictMode>,
   document.getElementById('root')
 );
