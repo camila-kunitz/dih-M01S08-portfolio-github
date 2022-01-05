@@ -3,7 +3,11 @@ import styles from './Repositorio.module.css';
 
 const Repositorio = ({ titulo, descricao, destacar }) => {
   return (
-    <article className={styles["repositorio__container"]}>
+    <article className={
+      destacar
+        ? styles["repositorio__container-destaque"]
+        : styles["repositorio__container"]
+    }>
       <div>
         <h3 className={styles["repositorio__titulo"]}>{titulo}</h3>
         {

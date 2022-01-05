@@ -6,6 +6,14 @@
   background: rgb(219, 216, 216);
 }
 
+.repositorio__container-destaque {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  padding: 20px 0 40px 0;
+  background: chartreuse;
+}
+
 .repositorio__descricao {
   padding-left: 100px;
 }
