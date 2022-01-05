@@ -1,0 +1,17 @@
+.resumo__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0 40px 0;
+  background: rgb(187, 186, 186);
+}
+
+.resumo__imagem {
+  border-radius: 50%;
+  border: 5px solid black;
+  width: 20%;
+}
+
+.resumo__nome {
+  padding-left: 60px;
+}

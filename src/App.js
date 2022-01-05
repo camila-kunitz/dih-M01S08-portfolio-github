@@ -1,3 +1,5 @@
+import styles from './App.module.css';
+
 const App = () => {
   const lista_repositorios = [
     {
@@ -28,14 +30,14 @@ const App = () => {
   ];
 
   const itensRepositorio = lista_repositorios.map((item) => (
-    <p key={item.id}>
+    <p className={styles["app__texto"]} key={item.id}>
       {item.id} - {item.titulo} - {item.descricao}
     </p>
   ));
 
   return (
-    <div>
-      <h1>Meu portfólio Github</h1>
+    <div className={styles["app__container"]}>
+      <h1 className={styles["app__titulo"]}>Meu portfólio Github</h1>
       {
         lista_repositorios.length === 0
           ? (<span>Nenhum repositório disponível.</span>)
