@@ -1,7 +1,46 @@
 const App = () => {
+  const lista_repositorios = [
+    {
+      id: 1,
+      titulo: "Titulo 1",
+      descricao: "Descrição 1"
+    },
+    {
+      id: 2,
+      titulo: "Titulo 2",
+      descricao: "Descrição 2"
+    },
+    {
+      id: 3,
+      titulo: "Titulo 3",
+      descricao: "Descrição 3"
+    },
+    {
+      id: 4,
+      titulo: "Titulo 4",
+      descricao: "Descrição 4"
+    },
+    {
+      id: 5,
+      titulo: "Titulo 5",
+      descricao: "Descrição 5"
+    }
+  ];
+
+  const itensRepositorio = lista_repositorios.map((item) => (
+    <p key={item.id}>
+      {item.id} - {item.titulo} - {item.descricao}
+    </p>
+  ));
+
   return (
     <div>
-      <h1>Olá, portfólio!</h1>
+      <h1>Meu portfólio Github</h1>
+      {
+        lista_repositorios.length === 0
+          ? (<span>Nenhum repositório disponível.</span>)
+          : (itensRepositorio)
+      }
     </div>
   );
 }
