@@ -3,22 +3,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center; 
-  padding: 20px 0 40px 0;
+  padding: 20px;
   background: rgb(219, 216, 216);
 }
 
 .app__titulo {
-  padding-bottom: 20px;
+  padding-bottom: 30px;
   font-family: 'Courier New', Courier, monospace;
   text-decoration: underline;
-}
-
-.app__texto {
-  align-self: flex-start;
-  margin-left: 20px;
-}
-
-.app__texto::before {
-  content: ">";
-  margin-right: 20px;
 }

@@ -8,8 +8,8 @@ const Repositorio = ({ titulo, descricao, destacar }) => {
         ? styles["repositorio__container-destaque"]
         : styles["repositorio__container"]
     }>
-      <div>
-        <h3 className={styles["repositorio__titulo"]}>{titulo}</h3>
+      <div className={styles["repositorio__titulo"]}>
+        <h3>{titulo}</h3>
         {
           destacar ? (<span>projeto em destaque!!</span>) : null
         }
