@@ -43,13 +43,14 @@ const lista_repositorios = [
 
 const App = () => {
   const [repositorios, setRepositorios] = useState(lista_repositorios);
+  const [idSelecionado, setIdSelecionado] = useState(lista_repositorios[1].id);
 
   const itensRepositorio = repositorios.map((item) => (
     <Repositorio
       key={item.id}
       titulo={item.titulo}
       descricao={item.descricao}
-      destacar={item.destacar}
+      destacar={item.id === idSelecionado}
     />
   ));
 
