@@ -36,6 +36,7 @@ const App = () => {
       titulo={item.titulo}
       descricao={item.descricao}
       destacar={item.id === idSelecionado}
+      onDestacarRepositorio={() => setIdSelecionado(item.id)}
     />
   ));
 
@@ -49,7 +50,7 @@ const App = () => {
           imagem="https://github.com/camila-kunitz.png"
         />
 
-        <div>
+        <div className={styles['app__busca']}>
           <input
             type="text"
             value={nomeUsuario}

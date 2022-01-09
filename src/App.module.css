@@ -12,3 +12,32 @@
   font-family: 'Courier New', Courier, monospace;
   text-decoration: underline;
 }
+
+.app__busca {
+  display: flex;
+  justify-content: center;
+  background-color: darkgrey;
+  padding: 20px;
+}
+
+.app__busca input {
+  font-family: monospace;
+  font-weight: bold;
+  width: 300px;
+  height: 30px;
+  padding: 5px;
+}
+
+.app__busca button {
+  font-family: monospace;
+  font-weight: bold;
+  background-color: tomato;
+  color: white;
+  border: 1px solid black;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.app__busca button:hover {
+  background-color: red;
+}
