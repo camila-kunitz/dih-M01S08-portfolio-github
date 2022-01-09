@@ -1,7 +1,7 @@
 import styles from './App.module.css';
 import Resumo from './components/Resumo/Resumo';
 import Repositorio from './components/Repositorio/Repositorio';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const lista_repositorios = [
   {
@@ -44,6 +44,18 @@ const lista_repositorios = [
 const App = () => {
   const [repositorios, setRepositorios] = useState(lista_repositorios);
   const [idSelecionado, setIdSelecionado] = useState(lista_repositorios[1].id);
+
+  const consultaApi = async () => {
+    const resultadoApi = await fetch(
+      `https://api.github.com/users/camila-kunitz/repos`,
+    ).then((response) => response.json());
+
+    console.log(resultadoApi);
+  };
+
+  useEffect(() => {
+    consultaApi();
+  }, []);
 
   const itensRepositorio = repositorios.map((item) => (
     <Repositorio
