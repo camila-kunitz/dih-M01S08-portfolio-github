@@ -13,6 +13,10 @@ const App = () => {
     setNomeUsuario(nome);
   };
 
+  const handleBuscar = () => {
+    console.log('clicou!');
+  };
+
   const consultaApi = () => {
     fetch('https://api.github.com/users/camila-kunitz/repos')
       .then((response) => response.json())
@@ -51,7 +55,7 @@ const App = () => {
             value={nomeUsuario}
             onChange={({ target }) => handleNomeUsuario(target.value)}
           />
-          <button>Buscar</button>
+          <button onClick={handleBuscar}>Buscar</button>
         </div>
 
         <section>
