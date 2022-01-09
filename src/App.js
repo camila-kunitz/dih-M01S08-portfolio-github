@@ -4,47 +4,14 @@ import Repositorio from './components/Repositorio/Repositorio';
 import { useState, useEffect } from 'react';
 import { mapToRepoObject } from './data/data-utils';
 
-const lista_repositorios = [
-  {
-    id: 1,
-    titulo: 'Projeto 1',
-    descricao:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras felis.',
-    destacar: true,
-  },
-  {
-    id: 2,
-    titulo: 'Projeto 2',
-    descricao:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras felis.',
-    destacar: false,
-  },
-  {
-    id: 3,
-    titulo: 'Projeto 3',
-    descricao:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras felis.',
-    destacar: false,
-  },
-  {
-    id: 4,
-    titulo: 'Projeto 4',
-    descricao:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras felis.',
-    destacar: false,
-  },
-  {
-    id: 5,
-    titulo: 'Projeto 5',
-    descricao:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras felis.',
-    destacar: false,
-  },
-];
-
 const App = () => {
-  const [repositorios, setRepositorios] = useState(lista_repositorios);
-  const [idSelecionado, setIdSelecionado] = useState(lista_repositorios[1].id);
+  const [repositorios, setRepositorios] = useState([]);
+  const [idSelecionado, setIdSelecionado] = useState(0);
+  const [nomeUsuario, setNomeUsuario] = useState('');
+
+  const handleNomeUsuario = (nome) => {
+    setNomeUsuario(nome);
+  };
 
   const consultaApi = () => {
     fetch('https://api.github.com/users/camila-kunitz/repos')
@@ -77,6 +44,15 @@ const App = () => {
           nome="Camila Kunitz - Dev front-end"
           imagem="https://github.com/camila-kunitz.png"
         />
+
+        <div>
+          <input
+            type="text"
+            value={nomeUsuario}
+            onChange={({ target }) => handleNomeUsuario(target.value)}
+          />
+          <button>Buscar</button>
+        </div>
 
         <section>
           {repositorios.length === 0 ? (
