@@ -7,18 +7,18 @@ import { mapToRepoObject } from './data/data-utils';
 const App = () => {
   const [repositorios, setRepositorios] = useState([]);
   const [idSelecionado, setIdSelecionado] = useState(0);
-  const [nomeUsuario, setNomeUsuario] = useState('');
+  const [nomeUsuario, setNomeUsuario] = useState('camila-kunitz');
 
   const handleNomeUsuario = (nome) => {
     setNomeUsuario(nome);
   };
 
   const handleBuscar = () => {
-    console.log('clicou!');
+    fetchDadosDoUsuario();
   };
 
-  const consultaApi = () => {
-    fetch('https://api.github.com/users/camila-kunitz/repos')
+  const fetchDadosDoUsuario = () => {
+    fetch(`https://api.github.com/users/${nomeUsuario}/repos`)
       .then((response) => response.json())
       .then((resultado) => {
         const resultadoMapeado = mapToRepoObject(resultado);
@@ -27,7 +27,7 @@ const App = () => {
   };
 
   useEffect(() => {
-    consultaApi();
+    fetchDadosDoUsuario();
   }, []);
 
   const itensRepositorio = repositorios.map((item) => (
