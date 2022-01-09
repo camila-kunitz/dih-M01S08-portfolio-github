@@ -1,29 +1,29 @@
 .repositorio__container {
   display: flex;
-  justify-content: center;
-  align-items: center; 
+  align-items: center;
   padding: 20px 0 20px 0;
   background: rgb(219, 216, 216);
 }
 
 .repositorio__container-destaque {
   display: flex;
-  justify-content: center;
-  align-items: center; 
+  align-items: center;
   padding: 20px 0 20px 0;
   background: chartreuse;
 }
 
 .repositorio__titulo {
-  width: 150px;
+  font-size: 12px;
+  width: 400px;
   margin-left: 20px;
 }
 
 span {
-  font-size: 12px;
+  font-size: 10px;
 }
 
 .repositorio__descricao {
-  padding-left: 100px;
+  font-size: 12px;
+  pedding-left: 10px;
   margin-right: 20px;
 }

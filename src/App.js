@@ -2,6 +2,7 @@ import styles from './App.module.css';
 import Resumo from './components/Resumo/Resumo';
 import Repositorio from './components/Repositorio/Repositorio';
 import { useState, useEffect } from 'react';
+import { mapToRepoObject } from './data/data-utils';
 
 const lista_repositorios = [
   {
@@ -45,12 +46,13 @@ const App = () => {
   const [repositorios, setRepositorios] = useState(lista_repositorios);
   const [idSelecionado, setIdSelecionado] = useState(lista_repositorios[1].id);
 
-  const consultaApi = async () => {
-    const resultadoApi = await fetch(
-      `https://api.github.com/users/camila-kunitz/repos`,
-    ).then((response) => response.json());
-
-    console.log(resultadoApi);
+  const consultaApi = () => {
+    fetch('https://api.github.com/users/camila-kunitz/repos')
+      .then((response) => response.json())
+      .then((resultado) => {
+        const resultadoMapeado = mapToRepoObject(resultado);
+        setRepositorios(resultadoMapeado);
+      });
   };
 
   useEffect(() => {
